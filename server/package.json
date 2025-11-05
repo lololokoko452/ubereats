@@ -9,7 +9,7 @@
         "dev": "nodemon src/index.js",
         "seed": "node -r dotenv/config scripts/seed.js dotenv_config_path=.env",
         "lint": "eslint \"src\" \"scripts\" \"tests\" --ext .js",
-        "test": "jest --runInBand",
+        "test": "jest --runInBand --coverage",
         "build": "npm run lint \u0026\u0026 npm run test"
     },
     "dependencies": {
