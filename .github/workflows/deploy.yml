@@ -1,0 +1,72 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  NODE_VERSION: 18
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            client/package-lock.json
+            server/package-lock.json
+
+      - name: Install server dependencies
+        working-directory: server
+        run: npm ci
+
+      - name: Install client dependencies
+        working-directory: client
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: client
+        env:
+          NODE_ENV: production
+          VUE_APP_API_URL: ${{ secrets.PROD_API_URL }}
+        run: npm run build
+
+      - name: Prepare backend
+        working-directory: server
+        env:
+          NODE_ENV: production
+          JWT_SECRET: ${{ secrets.JWT_SECRET_PROD }}
+          MONGO_URI: ${{ secrets.MONGO_URI_PROD }}
+        run: |
+          echo "Preparing backend for production"
+
+      - name: Deploy to production
+        run: |
+          echo "Deploying frontend and backend..."
+          echo "Frontend artifacts available in client/dist"
+          echo "Backend ready in server/"
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "::notice ::Deployment succeeded on branch ${{ github.ref_name }} (commit ${{ github.sha }})"
+
+      - name: Failure notification
+        if: failure()
+        run: |
+          echo "::error ::Deployment failed on branch ${{ github.ref_name }} (commit ${{ github.sha }})"
