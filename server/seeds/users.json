@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Camille Martin",
+    "email": "camille.martin@example.com",
+    "password": "demo1234",
+    "avatar": "https://i.pravatar.cc/150?img=47",
+    "favoriteCategories": ["sushi", "healthy", "desserts"],
+    "addresses": [
+      {
+        "label": "Domicile",
+        "line1": "42 Rue des Martyrs",
+        "postalCode": "75009",
+        "city": "Paris",
+        "instructions": "Interphone B",
+        "coordinates": {
+          "lat": 48.8797,
+          "lng": 2.3375
+        }
+      }
+    ]
+  },
+  {
+    "name": "Alex Dupont",
+    "email": "alex.dupont@example.com",
+    "password": "demo1234",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "favoriteCategories": ["burgers", "pizza"],
+    "addresses": [
+      {
+        "label": "Bureau",
+        "line1": "5 Avenue Anatole France",
+        "postalCode": "75007",
+        "city": "Paris",
+        "coordinates": {
+          "lat": 48.8584,
+          "lng": 2.2945
+        }
+      }
+    ]
+  }
+]

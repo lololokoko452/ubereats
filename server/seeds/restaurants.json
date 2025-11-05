@@ -1,0 +1,552 @@
+[
+  {
+    "name": "Maison Smash",
+    "slug": "maison-smash",
+    "tagline": "Smash burgers & frites maison",
+    "shortDescription": "Pain brioché, viande française, sauces maison.",
+    "description": "Maison Smash revisite le smash burger avec des produits sourcés localement, des recettes signature et des options végétariennes gourmandes.",
+    "heroImage": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1600&auto=format&fit=crop",
+    "logoImage": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?q=80&w=400&auto=format&fit=crop",
+    "rating": 4.8,
+    "reviewCount": 540,
+    "deliveryFee": 2.49,
+    "deliveryFeeDescription": "Frais de livraison 2,49 €",
+    "deliveryTimeMin": 20,
+    "deliveryTimeMax": 30,
+    "priceRange": "€€",
+    "highlights": ["Ingrédients locaux", "Options végétariennes"],
+    "tags": ["burger", "smash", "comfort food", "frites maison"],
+    "collections": ["discover", "popular", "nearby", "hero"],
+    "isFeatured": true,
+    "isPopular": true,
+    "isRecommended": true,
+    "location": {
+      "address": "12 Rue Oberkampf",
+      "postalCode": "75011",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8643,
+        "lng": 2.3767
+      }
+    },
+    "contact": {
+      "phone": "+33 1 42 00 00 00",
+      "instagram": "@maisonsmash"
+    },
+    "promo": {
+      "text": "-20% sur votre première commande",
+      "accentColor": "#ff6f61"
+    },
+    "menuSections": [
+      {
+        "title": "Burgers Signature",
+        "subtitle": "Recettes incontournables",
+        "items": [
+          {
+            "name": "Smash Truffe",
+            "description": "Double steak smash, cheddar affiné, mayo truffée, oignons confits.",
+            "price": 13.9,
+            "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop",
+            "tags": ["best seller"]
+          },
+          {
+            "name": "Green Smash",
+            "description": "Galette veggie, houmous citronné, pickles maison, roquette.",
+            "price": 12.5,
+            "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+            "tags": ["végétarien"]
+          }
+        ]
+      },
+      {
+        "title": "Sides",
+        "items": [
+          {
+            "name": "Frites au paprika fumé",
+            "description": "Frites croustillantes, paprika fumé, herbes fraîches.",
+            "price": 4.2
+          },
+          {
+            "name": "Mac & Cheese au vieux cheddar",
+            "price": 5.9
+          }
+        ]
+      }
+    ],
+    "deliveryNotes": [
+      "Suivi en temps réel de la commande",
+      "Packaging 100% recyclable"
+    ],
+    "categorySlugs": ["burgers"]
+  },
+  {
+    "name": "Sakura Bento Club",
+    "slug": "sakura-bento-club",
+    "tagline": "Sushis artisanaux & bentos de saison",
+    "shortDescription": "Cuisine japonaise moderne et raffinée.",
+    "description": "Sakura Bento Club propose des sushis préparés à la commande, des chirashis colorés et des bentos équilibrés inspirés du Japon contemporain.",
+    "heroImage": "https://i0.wp.com/christinapotvin.com/wp-content/uploads/2021/12/miniature-youtube-2.jpg?resize=1080%2C675&ssl=1",
+    "logoImage": "https://i0.wp.com/christinapotvin.com/wp-content/uploads/2021/12/miniature-youtube-2.jpg?resize=1080%2C675&ssl=1",
+    "rating": 4.9,
+    "reviewCount": 690,
+    "deliveryFee": 1.99,
+    "deliveryFeeDescription": "Frais de livraison 1,99 €",
+    "deliveryTimeMin": 25,
+    "deliveryTimeMax": 35,
+    "priceRange": "€€€",
+    "highlights": ["Poissons label rouge", "Saké pairing"],
+    "tags": ["sushi", "japonais", "chirashi", "healthy"],
+    "collections": ["discover", "popular", "premium"],
+    "isFeatured": true,
+    "isPopular": true,
+    "isRecommended": true,
+    "location": {
+      "address": "8 Rue Sainte-Anne",
+      "postalCode": "75001",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8656,
+        "lng": 2.3364
+      }
+    },
+    "contact": {
+      "phone": "+33 1 43 00 11 22",
+      "website": "https://sakurabento.fr"
+    },
+    "promo": {
+      "text": "Plateau dégustation -15% le soir",
+      "accentColor": "#ffb400"
+    },
+    "menuSections": [
+      {
+        "title": "Plateaux Signature",
+        "items": [
+          {
+            "name": "Omakase 24 pièces",
+            "description": "Sélection du chef : nigiri, sashimi, maki rolls.",
+            "price": 28.5,
+            "image": "https://images.unsplash.com/photo-1593032465171-a7c7c444fe28?q=80&w=800&auto=format&fit=crop",
+            "tags": ["best seller"]
+          },
+          {
+            "name": "Chirashi Saumon Yuzu",
+            "description": "Saumon label rouge, riz vinaigré, pickles maison.",
+            "price": 16.9,
+            "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
+            "tags": ["healthy"]
+          }
+        ]
+      },
+      {
+        "title": "Bentō",
+        "items": [
+          {
+            "name": "Bento Poulet Karaage",
+            "description": "Karaage croustillant, riz, salade d'algues, tamago.",
+            "price": 14.9
+          },
+          {
+            "name": "Bento Veggie Kabocha",
+            "description": "Courge rôtie, tofu soyeux, riz multigrains.",
+            "price": 13.5,
+            "tags": ["végétarien"]
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["sushi", "healthy"]
+  },
+  {
+    "name": "Nonna Mia Trattoria",
+    "slug": "nonna-mia-trattoria",
+    "tagline": "Pizzas napolitaines au feu de bois",
+    "shortDescription": "Pizzas à pâte longue fermentation, produits DOP.",
+    "description": "Nonna Mia propose des pizzas napolitaines cuites en 90 secondes dans un four à bois traditionnel, avec des produits italiens de qualité.",
+    "heroImage": "https://tribunedelyon.fr/wp-content/uploads/sites/5/2025/02/Pizza-mortadelle-de-Bologne-Vico-Pizza.webp",
+    "logoImage": "https://tribunedelyon.fr/wp-content/uploads/sites/5/2025/02/Pizza-mortadelle-de-Bologne-Vico-Pizza.webp",
+    "rating": 4.7,
+    "reviewCount": 820,
+    "deliveryFee": 1.49,
+    "deliveryFeeDescription": "Frais de livraison 1,49 €",
+    "deliveryTimeMin": 30,
+    "deliveryTimeMax": 40,
+    "priceRange": "€€",
+    "highlights": ["Pâte 48h", "Buffala DOP"],
+    "tags": ["pizza", "italien", "napolitain"],
+    "collections": ["nearby", "popular", "comfort"],
+    "isPopular": true,
+    "location": {
+      "address": "25 Rue des Abbesses",
+      "postalCode": "75018",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8857,
+        "lng": 2.3387
+      }
+    },
+    "contact": {
+      "phone": "+33 1 45 00 22 11"
+    },
+    "menuSections": [
+      {
+        "title": "Pizzas Classiques",
+        "items": [
+          {
+            "name": "Margherita DOP",
+            "description": "San Marzano, mozzarelle di bufala, basilic frais.",
+            "price": 12.9
+          },
+          {
+            "name": "Diavola Piccante",
+            "description": "Nduja calabraise, scamorza fumée, olives noires.",
+            "price": 14.5,
+            "tags": ["épicé"]
+          }
+        ]
+      },
+      {
+        "title": "Desserts",
+        "items": [
+          {
+            "name": "Tiramisu maison",
+            "price": 6.5
+          },
+          {
+            "name": "Panna cotta fruits rouges",
+            "price": 6.0
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["pizza", "desserts"]
+  },
+  {
+    "name": "Greenhouse Cantine",
+    "slug": "greenhouse-cantine",
+    "tagline": "Bowls healthy & jus pressés à froid",
+    "shortDescription": "Cuisine nourrissante et végétale",
+    "description": "Greenhouse Cantine prépare des bowls généreux, des toasts gourmands et des jus pressés à froid, pensés pour une pause saine et colorée.",
+    "heroImage": "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1600&auto=format&fit=crop",
+    "logoImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop",
+    "rating": 4.6,
+    "reviewCount": 410,
+    "deliveryFee": 2.99,
+    "deliveryFeeDescription": "Frais de livraison 2,99 €",
+    "deliveryTimeMin": 25,
+    "deliveryTimeMax": 35,
+    "priceRange": "€€",
+    "highlights": ["100% maison", "Vegan friendly"],
+    "tags": ["healthy", "vegan", "poke bowl", "jus"],
+    "collections": ["discover", "nearby", "healthy"],
+    "isFeatured": true,
+    "isRecommended": true,
+    "location": {
+      "address": "101 Rue de la Folie Méricourt",
+      "postalCode": "75011",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8668,
+        "lng": 2.3743
+      }
+    },
+    "contact": {
+      "instagram": "@greenhouse_paris"
+    },
+    "promo": {
+      "text": "Jus pressé OFFERT avec chaque bowl",
+      "accentColor": "#2c9a7a"
+    },
+    "menuSections": [
+      {
+        "title": "Bowls Signature",
+        "items": [
+          {
+            "name": "Rainbow Bowl",
+            "description": "Quinoa, houmous betterave, patate douce, kale croustillant.",
+            "price": 13.2,
+            "tags": ["vegan"]
+          },
+          {
+            "name": "Protein Boost",
+            "description": "Poulet fermier, avocat, lentilles corail, sauce miso tahini.",
+            "price": 14.5,
+            "tags": ["protéiné"]
+          }
+        ]
+      },
+      {
+        "title": "Jus & Smoothies",
+        "items": [
+          {
+            "name": "Green Glow",
+            "description": "Pomme, concombre, épinard, gingembre.",
+            "price": 5.9
+          },
+          {
+            "name": "Sunrise Shot",
+            "description": "Orange sanguine, curcuma, poivre noir.",
+            "price": 3.5
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["healthy"]
+  },
+  {
+    "name": "Le Brunch des Amis",
+    "slug": "le-brunch-des-amis",
+    "tagline": "Brunch à la française, tous les jours",
+    "shortDescription": "Viennoiseries, tartines, pancakes maison.",
+    "description": "Le Brunch des Amis propose un brunch généreux avec viennoiseries artisanales, tartines gourmets et boissons chaudes de spécialité.",
+    "heroImage": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1600&auto=format&fit=crop",
+    "logoImage": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=400&auto=format&fit=crop",
+    "rating": 4.5,
+    "reviewCount": 260,
+    "deliveryFee": 1.99,
+    "deliveryFeeDescription": "Frais de livraison 1,99 €",
+    "deliveryTimeMin": 20,
+    "deliveryTimeMax": 30,
+    "priceRange": "€€",
+    "highlights": ["Brunch toute la semaine", "Café spécialité"],
+    "tags": ["brunch", "viennoiserie", "pancakes", "café"],
+    "collections": ["nearby", "comfort", "petit-dejeuner"],
+    "isRecommended": true,
+    "location": {
+      "address": "3 Rue Keller",
+      "postalCode": "75011",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8536,
+        "lng": 2.3709
+      }
+    },
+    "menuSections": [
+      {
+        "title": "Formules Brunch",
+        "items": [
+          {
+            "name": "Formule Classique",
+            "description": "Boisson chaude, jus frais, panier de viennoiseries, plat au choix.",
+            "price": 21.0
+          },
+          {
+            "name": "Formule Kids",
+            "description": "Mini pancakes, chocolat chaud, jus pomme poire.",
+            "price": 12.0
+          }
+        ]
+      },
+      {
+        "title": "À partager",
+        "items": [
+          {
+            "name": "Granola maison & yaourt grec",
+            "price": 6.5
+          },
+          {
+            "name": "Pain perdu brioché",
+            "price": 7.8
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["petit-dejeuner", "desserts"]
+  },
+  {
+    "name": "Choco Lab",
+    "slug": "choco-lab",
+    "tagline": "Desserts créatifs & chocolat bean-to-bar",
+    "shortDescription": "Brownies, cookies et douceurs 100% chocolat.",
+    "description": "Choco Lab torréfie ses fèves de cacao sur place et propose un bar à desserts autour du chocolat, avec des créations limitées chaque semaine.",
+    "heroImage": "https://mapatisserie.fr/wp-content/uploads/2025/03/recette-gateau-chocolat-01-350x350.jpg",
+    "logoImage": "https://mapatisserie.fr/wp-content/uploads/2025/03/recette-gateau-chocolat-01-350x350.jpg",
+    "rating": 4.9,
+    "reviewCount": 190,
+    "deliveryFee": 1.49,
+    "deliveryFeeDescription": "Frais de livraison 1,49 €",
+    "deliveryTimeMin": 15,
+    "deliveryTimeMax": 25,
+    "priceRange": "€€",
+    "highlights": ["Fèves direct producteur", "Gluten free options"],
+    "tags": ["desserts", "chocolat", "cookies"],
+    "collections": ["discover", "sweet", "dessert"],
+    "isFeatured": true,
+    "location": {
+      "address": "18 Rue de Turenne",
+      "postalCode": "75004",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8562,
+        "lng": 2.3651
+      }
+    },
+    "promo": {
+      "text": "Cookie du jour offert dès 20 €",
+      "accentColor": "#8c4a2f"
+    },
+    "menuSections": [
+      {
+        "title": "Gâteaux Signature",
+        "items": [
+          {
+            "name": "Brownie Fleur de Sel",
+            "price": 4.8
+          },
+          {
+            "name": "Cheesecake Chocolat Blanc Framboise",
+            "price": 5.9
+          }
+        ]
+      },
+      {
+        "title": "Boissons Chocolatées",
+        "items": [
+          {
+            "name": "Chocolate Shot 70%",
+            "price": 3.2
+          },
+          {
+            "name": "Iced Mocha Noisette",
+            "price": 4.5
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["desserts"]
+  },
+  {
+    "name": "Pho Saigon Express",
+    "slug": "pho-saigon-express",
+    "tagline": "Cuisine vietnamienne authentique",
+    "shortDescription": "Phở mijoté 12h, bánh mì croustillants, bò bún parfumé.",
+    "description": "Un voyage culinaire au Vietnam avec des recettes familiales, des herbes fraîches et des bouillons maison préparés chaque nuit.",
+    "heroImage": "https://www.autourduriz.com/asianfood/wp-content/uploads/2022/09/Bo-bun-viet.jpg",
+    "logoImage": "https://www.autourduriz.com/asianfood/wp-content/uploads/2022/09/Bo-bun-viet.jpg",
+    "rating": 4.7,
+    "reviewCount": 370,
+    "deliveryFee": 2.49,
+    "deliveryFeeDescription": "Frais de livraison 2,49 €",
+    "deliveryTimeMin": 25,
+    "deliveryTimeMax": 35,
+    "priceRange": "€",
+    "highlights": ["Bouillons maison", "Options végétariennes"],
+    "tags": ["pho", "vietnamien", "bánh mì"],
+    "collections": ["nearby", "popular", "comfort"],
+    "isPopular": true,
+    "isRecommended": true,
+    "location": {
+      "address": "72 Avenue de Choisy",
+      "postalCode": "75013",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8218,
+        "lng": 2.3623
+      }
+    },
+    "menuSections": [
+      {
+        "title": "Phở",
+        "items": [
+          {
+            "name": "Phở Bo Classique",
+            "description": "Bœuf, bouillon aux épices, herbes fraîches.",
+            "price": 12.0
+          },
+          {
+            "name": "Phở Vegan Shiitake",
+            "description": "Bouillon légumes, shiitake marinés, tofu croustillant.",
+            "price": 11.5,
+            "tags": ["vegan"]
+          }
+        ]
+      },
+      {
+        "title": "Bánh Mì",
+        "items": [
+          {
+            "name": "Bánh mì Poulet Citronnelle",
+            "price": 7.9
+          },
+          {
+            "name": "Bánh mì Tofu Curry",
+            "price": 7.5,
+            "tags": ["végétarien"]
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["healthy"]
+  },
+  {
+    "name": "Casa Taqueria",
+    "slug": "casa-taqueria",
+    "tagline": "Tacos mexicains & margaritas maison",
+    "shortDescription": "Tacos artisanaux, birria fondante, guacamole minute.",
+    "description": "Casa Taqueria célèbre la street-food mexicaine avec des tortillas maison, des garnitures mijotées et une sélection de sauces relevées.",
+    "heroImage": "https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1600&auto=format&fit=crop",
+    "logoImage": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop",
+    "rating": 4.6,
+    "reviewCount": 295,
+    "deliveryFee": 2.29,
+    "deliveryFeeDescription": "Frais de livraison 2,29 €",
+    "deliveryTimeMin": 20,
+    "deliveryTimeMax": 30,
+    "priceRange": "€€",
+    "highlights": ["Birria 6h", "Sauces maison"],
+    "tags": ["tacos", "mexicain", "birria", "street food"],
+    "collections": ["discover", "spicy", "comfort"],
+    "isFeatured": true,
+    "isRecommended": true,
+    "location": {
+      "address": "14 Rue Crespin du Gast",
+      "postalCode": "75011",
+      "city": "Paris",
+      "coordinates": {
+        "lat": 48.8651,
+        "lng": 2.3801
+      }
+    },
+    "promo": {
+      "text": "Combo 3 tacos + margarita à 19 €",
+      "accentColor": "#f15c3b"
+    },
+    "menuSections": [
+      {
+        "title": "Tacos Signature",
+        "items": [
+          {
+            "name": "Birria de Bœuf",
+            "description": "Bœuf mijoté, fromage Oaxaca, bouillon à tremper.",
+            "price": 4.5,
+            "tags": ["best seller"]
+          },
+          {
+            "name": "Carnitas Ananas",
+            "description": "Porc effiloché, ananas rôti, salsa verde.",
+            "price": 4.2
+          },
+          {
+            "name": "Cochinita Vegan",
+            "description": "Jackfruit mariné achiote, pico de gallo.",
+            "price": 4.1,
+            "tags": ["vegan"]
+          }
+        ]
+      },
+      {
+        "title": "Extras",
+        "items": [
+          {
+            "name": "Guacamole minute",
+            "price": 6.5
+          },
+          {
+            "name": "Maïs grillé cotija",
+            "price": 5.2
+          }
+        ]
+      }
+    ],
+    "categorySlugs": ["burgers", "healthy"]
+  }
+]
