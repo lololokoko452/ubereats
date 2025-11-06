@@ -1,6 +1,7 @@
 require('dotenv').config()
 require('express-async-errors')
 
+const { Sentry } = require('./config/sentry')
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
@@ -11,6 +12,9 @@ const fs = require('node:fs')
 const routes = require('./routes')
 
 const app = express()
+
+app.use(Sentry.Handlers.requestHandler())
+app.use(Sentry.Handlers.tracingHandler())
 
 app.use(cors())
 app.use(express.json({ limit: '1mb' }))
@@ -26,11 +30,17 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', uptime: process.uptime() })
 })
 
+app.get('/debug-sentry', () => {
+  throw new Error('Test Sentry');
+});
+
 app.use('/api', routes)
 
 app.use((req, res, next) => {
   next(createError(404, `No route found for ${req.method} ${req.originalUrl}`))
 })
+
+app.use(Sentry.Handlers.errorHandler())
 
 // eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
