@@ -10,9 +10,9 @@
 <script>
 import { mapGetters } from 'vuex'
 import CartModal from '@/components/CartModal.vue'
-import { Sentry } from '@/plugins/sentry'
+import { Sentry, withProfiler } from '@/plugins/sentry'
 
-export default Sentry.withProfiler({
+export default withProfiler({
   name: 'App',
   components: {
     CartModal,

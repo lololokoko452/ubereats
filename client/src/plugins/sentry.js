@@ -46,4 +46,9 @@ export function initSentry(Vue, router) {
   return Sentry
 }
 
-export { Sentry }
+const withProfiler = (...args) =>
+  typeof Sentry.withProfiler === 'function'
+    ? Sentry.withProfiler(...args)
+    : args[0]
+
+export { Sentry, withProfiler }
