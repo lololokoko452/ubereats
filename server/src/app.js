@@ -1,7 +1,7 @@
 require('dotenv').config()
 require('express-async-errors')
 
-const { Sentry } = require('./config/sentry')
+const { Sentry, initSentry } = require('./config/sentry')
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
@@ -12,6 +12,8 @@ const fs = require('node:fs')
 const routes = require('./routes')
 
 const app = express()
+
+initSentry(app)
 
 app.use(Sentry.Handlers.requestHandler())
 app.use(Sentry.Handlers.tracingHandler())
@@ -30,9 +32,9 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', uptime: process.uptime() })
 })
 
-app.get('/debug-sentry', () => {
-  throw new Error('Test Sentry');
-});
+app.get('/api/debug-sentry', () => {
+  throw new Error('Intentional Sentry test error')
+})
 
 app.use('/api', routes)
 
