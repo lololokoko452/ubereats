@@ -84,6 +84,17 @@ jobs:
         working-directory: client
         run: npm ci
 
+      - name: Check MONGO_URI secret
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI_PROD }}
+        run: |
+          if [ -z "$MONGO_URI" ]; then
+            echo "::error ::MONGO_URI is empty"
+            exit 1
+          else
+            echo "MONGO_URI is set ✅"
+          fi
+
       - name: Prepare backend
         working-directory: server
         env:
