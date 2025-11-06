@@ -1,9 +1,9 @@
-name: Deploy
+name: Staging Deploy
 
 on:
   push:
     branches:
-      - master
+      - develop
 
 permissions:
   contents: read
@@ -54,15 +54,15 @@ jobs:
         working-directory: client
         env:
           NODE_ENV: production
-          VUE_APP_API_URL: ${{ secrets.PROD_API_URL }}
+          VUE_APP_API_URL: ${{ secrets.STAGING_API_URL }}
         run: npm run build
 
   deploy:
-    name: Build & Deploy
+    name: Deploy to staging
     runs-on: ubuntu-latest
     needs: validate
     environment:
-      name: production
+      name: staging
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
@@ -88,38 +88,38 @@ jobs:
         working-directory: server
         env:
           NODE_ENV: production
-          JWT_SECRET: ${{ secrets.JWT_SECRET_PROD }}
-          MONGO_URI: ${{ secrets.MONGO_URI_PROD }}
+          JWT_SECRET: ${{ secrets.STAGING_JWT_SECRET }}
+          MONGO_URI: ${{ secrets.STAGING_MONGO_URI }}
         run: |
-          echo "Preparing backend for production"
+          echo "Preparing backend for staging"
 
       - name: Run database migrations
         working-directory: server
         env:
           NODE_ENV: production
-          MONGO_URI: ${{ secrets.MONGO_URI_PROD }}
-          MIGRATION_DRY_RUN: ${{ secrets.MIGRATION_DRY_RUN_PROD }}
+          MONGO_URI: ${{ secrets.STAGING_MONGO_URI }}
+          MIGRATION_DRY_RUN: ${{ secrets.MIGRATION_DRY_RUN_STAGING }}
         run: |
           if [ -z "$MIGRATION_DRY_RUN" ]; then
             export MIGRATION_DRY_RUN=true
           fi
           npm run migrate
 
-      - name: Deploy to production
+      - name: Deploy to staging
         run: |
-          echo "Deploying frontend and backend..."
+          echo "Deploying frontend and backend to staging..."
           echo "Frontend artifacts available in client/dist"
           echo "Backend ready in server/"
 
       - name: Post-deploy health check
         env:
-          HEALTHCHECK_URL: ${{ secrets.PROD_HEALTHCHECK_URL }}
+          HEALTHCHECK_URL: ${{ secrets.STAGING_HEALTHCHECK_URL }}
         run: |
           if [ -z "$HEALTHCHECK_URL" ]; then
             echo "No health check URL configured. Skipping."
           else
             curl --fail --silent --show-error "$HEALTHCHECK_URL"
-            echo "Health check succeeded."
+            echo "Staging health check succeeded."
           fi
 
       - name: Success notification
@@ -127,10 +127,10 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
-          echo "::notice ::Deployment succeeded on branch ${{ github.ref_name }} (commit ${{ github.sha }})"
+          echo "::notice ::Staging deployment succeeded on branch ${{ github.ref_name }} (commit ${{ github.sha }})"
           if [ -n "$SLACK_WEBHOOK_URL" ]; then
             curl -X POST -H 'Content-type: application/json' \
-              --data "{\"text\":\"[SUCCESS] Production deployment succeeded for ${GITHUB_REPOSITORY} (${GITHUB_SHA}).\"}" \
+              --data "{\"text\":\"[SUCCESS] Staging deployment succeeded for ${GITHUB_REPOSITORY} (${GITHUB_SHA}).\"}" \
               "$SLACK_WEBHOOK_URL"
           else
             echo "Slack webhook not configured; skipping notification."
@@ -141,10 +141,10 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
-          echo "::error ::Deployment failed on branch ${{ github.ref_name }} (commit ${{ github.sha }})"
+          echo "::error ::Staging deployment failed on branch ${{ github.ref_name }} (commit ${{ github.sha }})"
           if [ -n "$SLACK_WEBHOOK_URL" ]; then
             curl -X POST -H 'Content-type: application/json' \
-              --data "{\"text\":\"[FAILURE] Production deployment failed for ${GITHUB_REPOSITORY} (${GITHUB_SHA}). Check workflow logs.\"}" \
+              --data "{\"text\":\"[FAILURE] Staging deployment failed for ${GITHUB_REPOSITORY} (${GITHUB_SHA}). Check workflow logs.\"}" \
               "$SLACK_WEBHOOK_URL"
           else
             echo "Slack webhook not configured; skipping notification."

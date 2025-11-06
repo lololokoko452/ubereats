@@ -8,6 +8,7 @@
         "start": "node src/index.js",
         "dev": "nodemon src/index.js",
         "seed": "node -r dotenv/config scripts/seed.js dotenv_config_path=.env",
+        "migrate": "node scripts/migrate.js",
         "lint": "eslint \"src\" \"scripts\" \"tests\" --ext .js",
         "test": "jest --runInBand --coverage",
         "build": "npm run lint \u0026\u0026 npm run test"
