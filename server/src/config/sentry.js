@@ -4,7 +4,7 @@ Sentry.init({
   dsn: process.env.SENTRY_DSN_BACKEND,
   environment: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   release: '1.0.0',
-  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
+  tracesSampleRate: 1.0,
   profilesSampleRate: 1.0,
   debug: true, // active les logs SDK dans la console
   integrations: [
