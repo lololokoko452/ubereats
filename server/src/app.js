@@ -29,6 +29,16 @@ app.get('/api/health', (req, res) => {
 // routes
 app.use('/api', routes);
 
+app.get('/api/test-sentry', async (req, res) => {
+  Sentry.captureException(new Error('Manual test from /api/test-sentry'));
+  await Sentry.flush(3000); // attend l’envoi (max 3s)
+  res.json({ sent: true });
+});
+
+app.get('/api/debug-sentry', () => {
+  throw new Error('Intentional Sentry test error');
+});
+
 // 404
 app.use((req, res, next) => {
   next(createError(404, `No route found for ${req.method} ${req.originalUrl}`));
@@ -44,16 +54,5 @@ app.use((err, req, res, next) => {
   if (status >= 500) console.error(err);
   res.status(status).json({ status, message, details: err.details || undefined });
 });
-
-app.get('/api/test-sentry', async (req, res) => {
-  Sentry.captureException(new Error('Manual test from /api/test-sentry'));
-  await Sentry.flush(3000); // attend l’envoi (max 3s)
-  res.json({ sent: true });
-});
-
-app.get('/api/debug-sentry', () => {
-  throw new Error('Intentional Sentry test error');
-});
-
 
 module.exports = app
