@@ -1,7 +1,6 @@
-const Sentry = require('@sentry/node')
+const Sentry = require('@sentry/node');
 
-const environment =
-  process.env.NODE_ENV === 'production' ? 'production' : 'development'
+const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN_BACKEND,
@@ -13,6 +12,6 @@ Sentry.init({
     Sentry.httpIntegration({ tracing: true }),
     Sentry.expressIntegration(),
   ],
-})
+});
 
-module.exports = { Sentry }
+module.exports = { Sentry };
