@@ -31,7 +31,6 @@ async function run() {
 
   for (const file of files) {
     const migrationPath = path.join(migrationsDir, file);
-    // eslint-disable-next-line import/no-dynamic-require, global-require
     const migration = require(migrationPath);
 
     if (typeof migration.up !== 'function') {
