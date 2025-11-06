@@ -45,5 +45,15 @@ app.use((err, req, res, next) => {
   res.status(status).json({ status, message, details: err.details || undefined });
 });
 
+app.get('/api/test-sentry', async (req, res) => {
+  Sentry.captureException(new Error('Manual test from /api/test-sentry'));
+  await Sentry.flush(3000); // attend l’envoi (max 3s)
+  res.json({ sent: true });
+});
+
+app.get('/api/debug-sentry', () => {
+  throw new Error('Intentional Sentry test error');
+});
+
 
 module.exports = app
