@@ -1,22 +1,25 @@
 <template>
-  <SentryErrorBoundary :fallback="renderFallback">
-    <v-app>
-      <router-view />
-      <cart-modal />
-    </v-app>
-  </SentryErrorBoundary>
+  <v-app>
+    <router-view />
+    <cart-modal />
+  </v-app>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import CartModal from '@/components/CartModal.vue'
-import { Sentry, withProfiler } from '@/plugins/sentry'
+import { Sentry } from '@/plugins/sentry'
 
-export default withProfiler({
+const tracingMixins = Sentry.createTracingMixins({
+  trackComponents: true,
+  timeout: 2000,
+})
+
+export default {
   name: 'App',
+  mixins: Array.isArray(tracingMixins) ? tracingMixins : [],
   components: {
     CartModal,
-    SentryErrorBoundary: Sentry.ErrorBoundary,
   },
   computed: {
     ...mapGetters('auth', ['isAuthenticated']),
@@ -36,14 +39,5 @@ export default withProfiler({
       this.$store.dispatch('cart/fetch')
     }
   },
-  methods: {
-    renderFallback(h) {
-      return h(
-        'div',
-        { class: 'sentry-fallback' },
-        'Une erreur est survenue. Merci de réessayer plus tard.'
-      )
-    },
-  },
-})
+}
 </script>
