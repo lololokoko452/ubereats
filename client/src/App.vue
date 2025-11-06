@@ -1,18 +1,22 @@
 <template>
-  <v-app>
-    <router-view />
-    <cart-modal />
-  </v-app>
+  <SentryErrorBoundary :fallback="renderFallback">
+    <v-app>
+      <router-view />
+      <cart-modal />
+    </v-app>
+  </SentryErrorBoundary>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import CartModal from '@/components/CartModal.vue'
+import { Sentry } from '@/plugins/sentry'
 
-export default {
+export default Sentry.withProfiler({
   name: 'App',
   components: {
     CartModal,
+    SentryErrorBoundary: Sentry.ErrorBoundary,
   },
   computed: {
     ...mapGetters('auth', ['isAuthenticated']),
@@ -32,5 +36,14 @@ export default {
       this.$store.dispatch('cart/fetch')
     }
   },
-}
+  methods: {
+    renderFallback(h) {
+      return h(
+        'div',
+        { class: 'sentry-fallback' },
+        'Une erreur est survenue. Merci de réessayer plus tard.'
+      )
+    },
+  },
+})
 </script>
