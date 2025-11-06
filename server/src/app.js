@@ -1,7 +1,7 @@
 require('dotenv').config()
 require('express-async-errors')
 
-const { Sentry, initSentry } = require('./config/sentry')
+const { Sentry } = require('./config/sentry')
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
@@ -12,8 +12,6 @@ const fs = require('node:fs')
 const routes = require('./routes')
 
 const app = express()
-
-initSentry(app)
 
 app.use(Sentry.Handlers.requestHandler())
 app.use(Sentry.Handlers.tracingHandler())
