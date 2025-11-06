@@ -1,24 +1,23 @@
 const Sentry = require('@sentry/node');
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN_BACKEND,
-  environment: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-  release: '1.0.0',
-  tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
-  profilesSampleRate: 1.0,
-  debug: true, // active les logs SDK dans la console
-  integrations: [
-    Sentry.httpIntegration({ tracing: true }),
-    Sentry.expressIntegration(),
-  ],
+  dsn: process.env.SENTRY_DSN_BACKEND,   // NE RIEN METTRE D’AUTRE ICI
+  debug: true,                           // log SDK
+  sampleRate: 1.0,                       // erreurs: 100%
+  // pas d'intégrations, pas de traces, rien d'autre
 });
 
-// petit sanity check au démarrage
-const dsn = Sentry.getClient()?.getDsn();
-if (!dsn) {
-  console.warn('[Sentry] Aucun DSN détecté (SENTRY_DSN_BACKEND manquant ou vide).');
-} else {
-  console.log(`[Sentry] DSN détecté (host=${dsn.host})`);
+// Log de vérité sur le DSN et client
+const client = Sentry.getClient();
+const dsn = client?.getDsn?.();
+console.log('[Sentry] client:', !!client, 'dsn host:', dsn?.host, 'projectId:', dsn?.projectId);
+
+async function bootProbe() {
+  const id = Sentry.captureException(new Error('BOOT_PROBE_ERROR'));
+  console.log('[Sentry] captureException id:', id);
+  await Sentry.flush(5000); // attendre l’envoi
+  console.log('[Sentry] flush done');
 }
+bootProbe();
 
 module.exports = { Sentry };
